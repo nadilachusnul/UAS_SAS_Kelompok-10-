@@ -63,6 +63,87 @@ lxc-ls - f
 ```
 ![A1](aset/G12.jpg)
 
+Setting Nginx vm
+```bash
+nano /etc/nginx/sites-available/kelompok10.fpsas 
+```
+```bash
+  upstream laravel {
+        least_conn;
+        server lxc_php7_1.dev;
+        server lxc_php7_4_laravel.dev;
+        server lxc_php7_6_laravel.dev;
+        server lxc_php7_2_laravel.dev;
+  }
+  upstream yii {
+        server lxc_php7_2_yii.dev weight=2;
+        server lxc_php7_1_yii.dev weight=3;
+        server lxc_php7_4_yii.dev weight=4;
+        server lxc_php7_5_yii.dev weight=1;
+        server lxc_php7_6_yii.dev weight=6;
+   }
+  upstream ci {
+        server lxc_php5_1.dev;
+        server lxc_php5_2.dev;
+  }
+  upstream wp {
+        ip_hash;
+        server lxc_php7_3_wp.dev;
+        server lxc_php7_2.dev;
+        server lxc_php7_4_wp.dev;
+        server lxc_php7_5_wp.dev;
+  }
+
+  server {
+          listen 80;
+          listen [::]:80;
+
+          server_name kelompok5.fpsas;
+
+          root /var/www/html;
+          index index.html;
+
+          location /app {
+                  rewrite /app/?(.*)$ /$1 break;
+                  #proxy_pass http://lxc_php5_1.dev;
+                  proxy_pass http://ci;
+          }
+
+          location /product {
+                  rewrite /product/?(.*)$ /$1 break;
+                  #proxy_pass http://lxc_php7_6_yii.dev;
+                  proxy_pass http://yii;
+          }
+
+          location /phpmyadmin {
+                  rewrite /phpmyadmin/?(.*)$ /$1 break;
+                  proxy_pass http://lxc_db_server.dev;
+          }
+
+          location / {
+                  #rewrite /php7/?(.*)$ /$1 break;
+                  #proxy_pass http://lxc_php7_1.dev;
+                  proxy_pass http://laravel;
+          }
+
+  }
+
+  server {
+         listen 80;
+
+         server_name news.kelompok5.fpsas;
+
+         root /var/www/html;
+         index index.html;
+
+         location / {
+                  #rewrite /php7/?(.*)$ /$1 break;
+                  #proxy_pass http://lxc_php7_3_wp.dev;
+                  proxy_pass http://wp;
+         }
+  }
+```
+
 Deploy website menggunakan ansible:
 
 Setting hosts ansible

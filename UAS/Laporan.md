@@ -955,7 +955,8 @@ nano roles/laravel/tasks/main.yml
   lineinfile:
     dest=/var/www/html/landing/.env
     regexp='^DB_PASSWORD='
-    line=DB_PASSWORD=chintya
+    line=DB_PASSWORD=123
+    
 
 - name: change permission storage
   command: chmod -R 777 /var/www/html/landing/storage
@@ -1477,7 +1478,7 @@ nano install-wp.yml
 - hosts: lxc_php7_4_wp
   vars:
     username: 'admin'
-    password: 'chintya'
+    password: '123'
     domain: lxc_php7_4_wp.dev
   roles:
     - wp
@@ -1485,7 +1486,7 @@ nano install-wp.yml
 - hosts: lxc_php7_3_wp
   vars:
     username: 'admin'
-    password: 'chintya'
+    password: '123'
     domain: lxc_php7_3_wp.dev
   roles:
     - wp
@@ -1493,7 +1494,7 @@ nano install-wp.yml
 - hosts: lxc_php7_5_wp
   vars:
     username: 'admin'
-    password: 'chintya'
+    password: '123'
     domain: lxc_php7_5_wp.dev
   roles:
     - wp
@@ -1501,7 +1502,7 @@ nano install-wp.yml
 - hosts: wp
   vars:
 username: 'admin'
-    password: 'chintya'
+    password: '123'
     domain: lxc_php7_2.dev
   roles:
     - wp
@@ -1677,7 +1678,7 @@ define( 'DB_NAME', 'news' );
 define( 'DB_USER', 'admin' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'chintya' );
+define( 'DB_PASSWORD', '123' );
 
 /** MySQL hostname */
 define( 'DB_HOST', '10.0.3.200:3306' );

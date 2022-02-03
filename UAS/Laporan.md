@@ -1847,28 +1847,28 @@ Nilai rata – rata Throughput
 kelompok10.fpsas/ : 19.3/s\
 kelompok10.fpsas/app : 21.4/s\
 kelompok10.fpsas/product : 20.9/s\
-news.kelompok10.fpsas/ : 56.4/s
+news.kelompok10.fpsas/ : 7.6/s
 
 - 150 user
 
 kelompok10.fpsas/ : 18.3/s\
 kelompok10.fpsas/app : 19.6/s\
 kelompok10.fpsas/product : 19.6/s\
-news.kelompok10.fpsas/ : 54.7/s
+news.kelompok10.fpsas/ : 7.6/s
 
 - 300 user
 
 kelompok10.fpsas/ : 20.5/s\
 kelompok10.fpsas/app : 22.1/s\
 kelompok10.fpsas/product : 22,1/s\
-news.kelompok10.fpsas/ : 61.2/s\
+news.kelompok10.fpsas/ : 7.8/s
 
 - 500 user
 
 kelompok10.fpsas/ : 25.7/s\
 kelompok10.fpsas/app : 27.1/s\
 kelompok10.fpsas/product : 27.3/s\
-news.kelompok10.fpsas/ : 77.1/s
+news.kelompok10.fpsas/ : 9.4/s
 
 ### Nilai rata - rata jumlah user yang dapat dilayani setiap detik 
 

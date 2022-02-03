@@ -1870,7 +1870,7 @@ kelompok10.fpsas/app : 27.1/s\
 kelompok10.fpsas/product : 27.3/s\
 news.kelompok10.fpsas/ : 9.4/s
 
-### Nilai rata - rata jumlah user yang dapat dilayani setiap detik 
+### Nilai rata - rata jumlah user setiap detik 
 
 - 50 user
 

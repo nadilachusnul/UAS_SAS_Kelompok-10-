@@ -98,7 +98,7 @@ nano /etc/nginx/sites-available/kelompok10.fpsas
           listen 80;
           listen [::]:80;
 
-          server_name kelompok5.fpsas;
+          server_name kelompok10.fpsas;
 
           root /var/www/html;
           index index.html;
@@ -131,7 +131,7 @@ nano /etc/nginx/sites-available/kelompok10.fpsas
   server {
          listen 80;
 
-         server_name news.kelompok5.fpsas;
+         server_name news.kelompok10.fpsas;
 
          root /var/www/html;
          index index.html;
@@ -161,7 +161,7 @@ nano hosts
 ```bash
 127.0.0.1 localhost
 127.0.1.1 sas01
-127.0.0.1 kelompok5.fpsas news.kelompok5.fpsas
+127.0.0.1 kelompok10.fpsas news.kelompok10.fpsas
 
 #laravel
 10.0.3.101  lxc_php7_1.dev
@@ -596,7 +596,7 @@ declare(strict_types=1);
  * This is needed for cookie based authentication to encrypt password in
  * cookie. Needs to be 32 chars long.
  */
-$cfg['blowfish_secret'] = 'KELOMPOK5SISTEMADMINISTRASISERVE'; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
+$cfg['blowfish_secret'] = 'KELOMPOK10SISTEMADMINISTRASISERVE'; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
 
 /**
  * Servers configuration
@@ -931,7 +931,7 @@ nano roles/laravel/tasks/main.yml
   lineinfile:
     dest=/var/www/html/landing/.env
     regexp='^APP_URL='
-    line=APP_URL=http://kelompok5.fpsas
+    line=APP_URL=http://kelompok10.fpsas
 
 - name: set DB_HOST
   lineinfile:
@@ -1667,8 +1667,8 @@ nano roles/db/templates/wp.conf wp.local
 * @package WordPress
 */
 
-define( 'WP_HOME', 'http://news.kelompok5.fpsas' );
-define( 'WP_SITEURL', 'http://news.kelompok5.fpsas' );
+define( 'WP_HOME', 'http://news.kelompok10.fpsas' );
+define( 'WP_SITEURL', 'http://news.kelompok10.fpsas' );
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
@@ -1844,58 +1844,58 @@ Nilai rata – rata Throughput
 
 - 50 user
 
-kelompok5.fpsas/ : 19.3/s\
-kelompok5.fpsas/app : 21.4/s\
-kelompok5.fpsas/product : 20.9/s\
-news.kelompok5.fpsas/ : 56.4/s
+kelompok10.fpsas/ : 19.3/s\
+kelompok10.fpsas/app : 21.4/s\
+kelompok10.fpsas/product : 20.9/s\
+news.kelompok10.fpsas/ : 56.4/s
 
 - 150 user
 
-kelompok5.fpsas/ : 18.3/s\
-kelompok5.fpsas/app : 19.6/s\
-kelompok5.fpsas/product : 19.6/s\
-news.kelompok5.fpsas/ : 54.7/s
+kelompok10.fpsas/ : 18.3/s\
+kelompok10.fpsas/app : 19.6/s\
+kelompok10.fpsas/product : 19.6/s\
+news.kelompok10.fpsas/ : 54.7/s
 
 - 300 user
 
-kelompok5.fpsas/ : 20.5/s\
-kelompok5.fpsas/app : 22.1/s\
-kelompok5.fpsas/product : 22,1/s\
-news.kelompok5.fpsas/ : 61.2/s\
+kelompok10.fpsas/ : 20.5/s\
+kelompok10.fpsas/app : 22.1/s\
+kelompok10.fpsas/product : 22,1/s\
+news.kelompok10.fpsas/ : 61.2/s\
 
 - 500 user
 
-kelompok5.fpsas/ : 25.7/s\
-kelompok5.fpsas/app : 27.1/s\
-kelompok5.fpsas/product : 27.3/s\
-news.kelompok5.fpsas/ : 77.1/s
+kelompok10.fpsas/ : 25.7/s\
+kelompok10.fpsas/app : 27.1/s\
+kelompok10.fpsas/product : 27.3/s\
+news.kelompok10.fpsas/ : 77.1/s
 
 ### Nilai rata - rata jumlah user yang dapat dilayani setiap detik 
 
 - 50 user
 
-kelompok5.fpsas/ : 1391\
-kelompok5.fpsas/app : 9\
-kelompok5.fpsas/product : 44\
-news.kelompok5.fpsas/ : 4104\
+kelompok10.fpsas/ : 1391\
+kelompok10.fpsas/app : 9\
+kelompok10.fpsas/product : 44\
+news.kelompok10.fpsas/ : 4104\
 
 - 150 user
 
-kelompok5.fpsas/ : 4262\
-kelompok5.fpsas/app : 9\
-kelompok5.fpsas/product : 52\
-news.kelompok5.fpsas/ : 11833
+kelompok10.fpsas/ : 4262\
+kelompok10.fpsas/app : 9\
+kelompok10.fpsas/product : 52\
+news.kelompok10.fpsas/ : 11833
 
 - 300 user
 
-kelompok5.fpsas/ : 7509\
-kelompok5.fpsas/app : 9\
-kelompok5.fpsas/product : 46\
-news.kelompok5.fpsas/ : 21954
+kelompok10.fpsas/ : 7509\
+kelompok10.fpsas/app : 9\
+kelompok10.fpsas/product : 46\
+news.kelompok10.fpsas/ : 21954
 
 - 500 user
 
-kelompok5.fpsas/ : 7886\
-kelompok5.fpsas/app : 78\
-kelompok5.fpsas/product : 97\
-news.kelompok5.fpsas/ : 23895
+kelompok10.fpsas/ : 7886\
+kelompok10.fpsas/app : 78\
+kelompok10.fpsas/product : 97\
+news.kelompok10.fpsas/ : 23895
